@@ -34,9 +34,7 @@ Inmobiliaria (resumen):
 
 # API Endpoints
 
-All API Request must be prepended with /api
-
-
+Todas las solicitudes de API deben ir precedidas de /api
 El flujo de autenticación para la aplicación es:
 
 ### Authentication Endpoints
