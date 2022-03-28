@@ -32,6 +32,19 @@ Inmobiliaria (resumen):
   
   7- El agende inmovialiario (admin) debe poder visualizar, editar, borrar, actualizar y cambiar estado a terminado, en progreso o pendiente tareas en una todo list directamente desde la web.
 
+# API Endpoints
+
+All API Request must be prepended with /api
+
+
+El flujo de autenticación para la aplicación es:
+
+### Authentication Endpoints
+
+METHOD | ENDPOINT         | TOKEN | DESCRIPTION              | POST PARAMS                                     | RETURNS
+-------|------------------|-------|--------------------------|-------------------------------------------------|--------------------
+POST   | /auth/signup     | -     | User Signup              | name, surname, email, phone, password           | token
+POST   | /auth/login      | -     | User Login               | email, password                                 | token
 
 
 
