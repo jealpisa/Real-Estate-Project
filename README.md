@@ -5,15 +5,15 @@ Gestión de inmobiliaria global.
 
 Para este proyecto hemos decidido crear un portal inmobiliario basandonos en entrevistas a pequeños autonomos del sector y en la necesidad concreta de unos clientes, combinado con un CRM de gestión de clientes y de propiedades que combine practicamente las funciones mas basicas para que un pequeño autónomo tenga una herramienta simple y potente con la que publicitar sus ofertas y realizar cruces de datos para filtrar las propiedades en base a las caracteristicas comunes que poseen sus clientes y las propiedades, un gestor de tareas (todoLIST) y una agenda donde guardar y planificar visitas, gestiones, prospección, etc.
 
-El proyecyto constará de dos repositorios separados, uno para el Front End hecho con Nuxt y Vuetify  y otro para el Back End, una API hecha con Node Axios, Cors, Morgan etc.
+El proyecyto constará de dos repositorios separados, uno para el Front End hecho con Nuxt y Vuetify y otro para el Back End, una API hecha con Node Axios, Cors, Morgan etc.
 
-La API esta creada para 2 tipos de usuarios. 
+La API esta creada para 4 tipos de usuarios. 
 
-Administradores.
+- Administradores: Tienen el control total de la API y el acceso a las tareas CRUD para todos los usuarios. También pueden realizar tareas CRUD en todos los documentos de la base de datos. 
 
-Clientes/visitantes
+- Compradores: Son los usuarios del front-end que están interesados en adquirir alguna vivienda. Éstos tendrán la posibilidad de registrarse en el front-end para revisar las viviendas disponibles para la venta, y solicitar visitas a las mismas. En este último caso, se realizará un pequeño cuestionario para facilitar esa cita y en el futuro poder ofrecer viviendas acorde a las necesidades y posibilidades del comprador. Además deberán aceptar la posibilidad de recibir "comunicaciones comerciales" y la información relativa al GPDR (ley de proteccion de datos).
 
-En cualquier caso, los usuarios clientes o visitantes podrán registrarse al hacer peticion a los administradores mostrando interés por una propiedad, realizando un pequeño cuestionario desde la misma para facilitar esa busqueda acorde a las necesidades y posibilidades de cada persona de la misma manera que tendrán que aceptar "comunicaciones comerciales" y ley de proteccion de datos.
+- Agentes: Son los empleados de la inmobiliaria, que tienen acceso a editar las propiedades que se ven en el Front-End y trabajar en las funcionalidades disponibles en el Back-End. 
 
 
 Inmobiliaria (resumen):
