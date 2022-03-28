@@ -13,8 +13,24 @@ Administradores.
 
 Clientes/visitantes
 
-En cualquier caso, los usuarios clientes o visitantes no podrán registrarse pero si hacer peticion a los administradores mostrando interés por una propiedad, realizando un pequeño cuestionario desde la misma para facilitar esa busqueda acorde a las necesidades y posibilidades de cada persona.
+En cualquier caso, los usuarios clientes o visitantes podrán registrarse al hacer peticion a los administradores mostrando interés por una propiedad, realizando un pequeño cuestionario desde la misma para facilitar esa busqueda acorde a las necesidades y posibilidades de cada persona de la misma manera que tendrán que aceptar "comunicaciones comerciales" y ley de proteccion de datos.
 
+
+Inmobiliaria (resumen):
+
+  1- Los clientes deben poder ver diferentes propiedades, filtrarlas por municipos, metros cuadrados, precio de venta, numero de habitaciones, baños...
+  
+  2- Los clientes deben poder hacer una peticion para hacer una visita a la propiedad o propiedades selecionadas o simplemente una cita con el agente inmobiliario (administrador) para recibir mas información.
+  
+  3- El agente inmobiliario (admin) debe poder subir, editar, actualizar tanto las propiedades que se suben a la web como los clientes que se registran.
+  
+  4- El agente inmobiliario (admin) debe poder filtrar las propiedades al igual que el cliente en el punto 1.
+  
+  5- El agente inmobiliario (admin) puede cruzar los datos de la coleccion de clientes y de las propiedades para obtener rapidamente las potenciales ventas.
+  
+  6- El agente inmobiliario (admin) debe poder agendar las visitas conectado a Google calendar desde la propia Web.
+  
+  7- El agende inmovialiario (admin) debe poder visualizar, editar, borrar, actualizar y cambiar estado a terminado, en progreso o pendiente tareas en una todo list directamente desde la web.
 
 
 
