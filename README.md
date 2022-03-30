@@ -57,4 +57,11 @@ DELETE | /admin/extra/:extraId            | YES   |  Admin  | Elimina extra de l
 POST   | /admin/category                  | YES   |  Admin  | Añade categoria a la db    | category       | Categoria creada
 DELETE | /admin/category/:categoryId      | YES   |  Admin  | Delete category form DB    | category       | Categoria creada
 
+### Propiedades Endpoints
+
+METHOD | ENDPOINT                         | TOKEN | ROLE          |  DESCRIPTION        | PARAMS                                          | RETURNS
+-------|----------------------------------|-------|---------------|---------------------|-------------------------------------------------|--------------------
+POST   | /propertie                       | YES   | Admin/Colaborator | Post a propertie| titulo, categoria, fotos, descripcion, notas, provincia, municipio, zona, metros construidos, metros utiles, metros parcela, habitaciones, baños, aseos, extras, planta, numero de plantas, fecha de creación, ubicación, propietario   | Propiedad cargada
+GET    | /prpoertie                       | NO    | All users     | Get all properties  | query: search string                            | Lists of matching tittle, categori, postDate and ids
+GET    | /propertie/:propertieId                | NO    | All users     | Get full propertie (-notas y propietario only Admin/colaborator  | -                                               | titulo, categoria, fotos, descripcion, notas, provincia, municipio, zona, metros construidos, metros utiles, metros parcela, habitaciones, baños, aseos, extras, planta, numero de plantas, fecha de creación, ubicación, propietario.
 
