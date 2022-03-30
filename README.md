@@ -24,13 +24,15 @@ Inmobiliaria (resumen):
   
   3- El agente inmobiliario (admin) debe poder subir, editar, actualizar tanto las propiedades que se suben a la web como los clientes que se registran.
   
-  4- El agente inmobiliario (admin) debe poder filtrar las propiedades al igual que el cliente en el punto 1.
+  4- Para poder realizar correctamente el punto 3, el agente inmobiliario (admin), podrá añadir nuevos enums a las colecciones de "zona" y "extras". Los demás enums necesarios ya seran predispuestos y acotados para que no necesite hacer esta labor.
   
-  5- El agente inmobiliario (admin) puede cruzar los datos de la coleccion de clientes y de las propiedades para obtener rapidamente las potenciales ventas.
+  5- El agente inmobiliario (admin) debe poder filtrar las propiedades al igual que el cliente en el punto 1.
   
-  6- El agente inmobiliario (admin) debe poder agendar las visitas conectado a Google calendar desde la propia Web.
+  6- El agente inmobiliario (admin) puede cruzar los datos de la coleccion de clientes y de las propiedades para obtener rapidamente las potenciales ventas.
   
-  7- El agende inmovialiario (admin) debe poder visualizar, editar, borrar, actualizar y cambiar estado a terminado, en progreso o pendiente tareas en una todo list directamente desde la web.
+  7- El agente inmobiliario (admin) debe poder agendar las visitas conectado a Google calendar desde la propia Web.
+  
+  8- El agende inmovialiario (admin) debe poder visualizar, editar, borrar, actualizar y cambiar estado a terminado, en progreso o pendiente tareas en una todo list directamente desde la web.
 
 # API Endpoints
 
@@ -44,5 +46,15 @@ METHOD | ENDPOINT         | TOKEN | DESCRIPTION              | POST PARAMS      
 POST   | /auth/signup     | -     | User Signup              | name, surname, email, phone, password           | token
 POST   | /auth/login      | -     | User Login               | email, password                                 | token
 
+### Admin Endpoints
+
+METHOD | ENDPOINT                         | TOKEN | ROLE    | DESCRIPTION                | POST PARAMS    | RETURNS
+-------|----------------------------------|-------|---------|----------------------------|----------------|---------
+POST   | /admin/zonas                     | YES   |  Admin  | Añade zona a la db         | zona.          | Zona creada
+DELETE | /admin/zona/:zonaId.             | YES   |  Admin  | Elimina zona de la db      | zonaId         | Zona eliminada
+POST   | /admin/extra.                    | YES   |  Admin  | Añade extra a la DB        | extra          | Extra creado
+DELETE | /admin/extra/:extraId            | YES   |  Admin  | Elimina extra de la db     | extra.         | Extra eliminado
+POST   | /admin/category                  | YES   |  Admin  | Añade categoria a la db    | category       | Categoria creada
+DELETE | /admin/category/:categoryId      | YES   |  Admin  | Delete category form DB    | category       | Categoria creada
 
 
