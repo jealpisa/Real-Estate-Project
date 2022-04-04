@@ -21,7 +21,7 @@ async function newUser(req, res) {
       email: user.email,
     })
   } catch (error) {
-    res.status(500).send(error)
+    res.status(500).send(error);
   }
 }
 
