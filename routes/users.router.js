@@ -2,7 +2,7 @@ const router = require('express').Router()
 
 const {
   newUser, getAllUsers, updateUser, deleteUserById
-} = require('../controllers/users.controller');
+} = require('../controllers/users.controller')
 
 router.post('/', newUser)
 router.get('/', getAllUsers)
