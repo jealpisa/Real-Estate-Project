@@ -65,4 +65,5 @@ POST   | /propertie                       | YES   | Admin/Colaborator | Post a p
 GET    | /propertie                       | NO    | All users     | Get all properties  | query: search string                            | Lists of matching tittle, categori, postDate and ids
 GET    | /propertie/:propertieId                | NO    | All users     | Get full propertie (- notas, fecha de creación y propietario solo podra ver el  Admin/colaborator)  | -  propertieId                                             | titulo, categoria, fotos, descripcion, provincia, municipio, zona, metros construidos, metros utiles, metros parcela, habitaciones, baños, aseos, extras, planta, numero de plantas, ubicación.
 PUT    | /propertie/:propertieId                | YES    | Admin/Colaborator    | Update propertie  | -  propertieId                                             | Propiedad actualizada.
+PUT    | /propertie/:propertieId                | YES    | Admin/Colaborator    | Delet propertie  | -  propertieId                                             | Propiedad eliminada.
 
