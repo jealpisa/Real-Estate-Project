@@ -10,8 +10,8 @@ const municipalities = new mongoose.Schema({
 const provincesSchema = new mongoose.Schema({
   province: {
     type: String,
-    required: [true, "Categorie is required"],
-    unique: [true, "This categorie already exists"],
+    required: [true, "Category is required"],
+    unique: [true, "This category already exists"],
   },
   municipalities: [municipalities],
   contractType: {

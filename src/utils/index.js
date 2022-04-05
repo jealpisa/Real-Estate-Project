@@ -48,6 +48,7 @@ function authAgent(req, res, next) {
 }
 
 module.exports = {
+  authUser,
   authAdmin,
   authAgent,
   authRole
