@@ -32,8 +32,5 @@ const municipalitiesSchema = new mongoose.Schema({
   },
 })
 
-const MunicipalitiesModel = mongoose.model(
-  'municipalities',
-  municipalitiesSchema
-)
+const MunicipalitiesModel = mongoose.model('municipalities', municipalitiesSchema)
 module.exports = MunicipalitiesModel
