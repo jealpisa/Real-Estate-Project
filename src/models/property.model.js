@@ -1,5 +1,34 @@
 const { ObjectId } = require('bson')
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
+const { postZone } = require('../controllers/admin.controller');
+
+const category = new mongoose.Schema({
+  category: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "category"
+  },
+});
+
+  const province = new mongoose.Schema({
+    province: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "province"
+    }, 
+  });  
+
+  const municipality = new mongoose.Schema({
+    municipality: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "municipality"
+    }, 
+  });  
+
+  const zone = new mongoose.Schema({
+    zone: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "zone"
+    }, 
+  });  
 
 const PropertySchema = new mongoose.Schema({
   title: {
@@ -10,21 +39,25 @@ const PropertySchema = new mongoose.Schema({
     type: Number,
     required: [true, 'Price is required for the property.'],
   },
-  category: {
-    type: mongoose.Schema.Types.ObjectId, 
-    required: [false, 'All properties need one category at least. Please, detail the category of this property.']
+  category: [category],
+  contractType: {
+    type: String,
+    required: [true, "Contract type is required"],
+  },  
+  province: [province],
+  contractType: {
+    type: String,
+    required: [true, "Contract type is required"],
   },
-  province: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: [false, 'All properties should include their Province. Please, detail it and try again.']
+  municipality: [municipality],
+  contractType: {
+    type: String,
+    required: [true, "Contract type is required"],
   },
-  municipality: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: [false, 'All properties should include their Municipality. Please, detail it and try again.']
-  },
-  zone: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: false
+  zone: [zone],
+  contractType: {
+    type: String,
+    required: [true, "Contract type is required"],
   },
   address: {
     type: String,
