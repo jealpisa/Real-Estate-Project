@@ -13,5 +13,6 @@ router
   .use('/auth', genAuthRouter)
   .use('/petition', genPetitionRouter)
   .use('/admin', genAdminRouter)
+  .use('/todo', TodoRouter)
 
 module.exports = router
