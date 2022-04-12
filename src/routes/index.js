@@ -5,6 +5,7 @@ const genPropertyRouter = require('./property.router')
 const genAuthRouter = require('./auth.router')
 const genPetitionRouter = require('./petition.router')
 const genAdminRouter = require('./admin.router')
+const TodoRouter = require('./todos.router')
 
 router
   .use('/user', genUserRouter)
