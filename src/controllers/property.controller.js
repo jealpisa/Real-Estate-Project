@@ -72,9 +72,22 @@ const deletePropertyById = async (req, res) => {
   }
 }
 
+const getAllPromoHouses = async (req, res) => {
+    try {
+        const property = await PropertyModel.find({
+            "ispromo": true
+        })
+        res.json(property)
+    } catch (error) {
+        
+    }
+       
+}
+
 module.exports = {
   newProperty,
   updateProperty,
   getAllProperties,
-  deletePropertyById
+  deletePropertyById,
+  getAllPromoHouses
 }

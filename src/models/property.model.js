@@ -112,6 +112,10 @@ const PropertySchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId, 
     required: false
   },
+  ispromo: {
+    type: Boolean,
+    required: false
+  }
 });
 
 const PropertyModel = mongoose.model('property', PropertySchema);
