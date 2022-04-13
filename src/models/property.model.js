@@ -42,22 +42,22 @@ const PropertySchema = new mongoose.Schema({
   category: [category],
   contractType: {
     type: String,
-    required: [true, "Contract type is required"],
+    required: [false, "Contract type is required"],
   },  
   province: [province],
   contractType: {
     type: String,
-    required: [true, "Contract type is required"],
+    required: [false, "Contract type is required"],
   },
   municipality: [municipality],
   contractType: {
     type: String,
-    required: [true, "Contract type is required"],
+    required: [false, "Contract type is required"],
   },
   zone: [zone],
   contractType: {
     type: String,
-    required: [true, "Contract type is required"],
+    required: [false, "Contract type is required"],
   },
   address: {
     type: String,
