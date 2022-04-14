@@ -6,6 +6,7 @@ const genAuthRouter = require('./auth.router')
 const genPetitionRouter = require('./petition.router')
 const genAdminRouter = require('./admin.router')
 const TodoRouter = require('./todos.router')
+const genContactRouter = require('./contact.router')
 
 router
   .use('/user', genUserRouter)
@@ -14,5 +15,6 @@ router
   .use('/petition', genPetitionRouter)
   .use('/admin', genAdminRouter)
   .use('/todo', TodoRouter)
+  .use('/contact', genContactRouter)
 
 module.exports = router

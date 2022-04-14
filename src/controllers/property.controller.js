@@ -12,36 +12,40 @@ async function newProperty(req, res) {
       province: req.body.province,
       municipality: req.body.municipality,
       zone: req.body.zone,
-      address: req.body.address, 
-      availableMeters: req.body.availableMeters, 
-      groundmeters: req.body.groundMeters, 
-      builtmeters: req.body.builtmeters, 
-      bathrooms: req.body.bathrooms, 
+      address: req.body.address,
+      availableMeters: req.body.availableMeters,
+      groundmeters: req.body.groundMeters,
+      builtmeters: req.body.builtmeters,
+      bathrooms: req.body.bathrooms,
       description: req.body.description,
-      privatenotes: req.body.privatenotes, 
-      extras: req.body.extras, 
-      floor: req.body.floor, 
+      privatenotes: req.body.privatenotes,
+      extras: req.body.extras,
+      floor: req.body.floor,
       numberoffloors: req.body.numberoffloors,
       photos: req.body.photos,
       createdAt: req.body.createdAt,
-      petitions: req.body.petitions
+      petitions: req.body.petitions,
     })
 
     res.json({
       title: property.title,
-      message: 'Property has been registered with success!'
+      message: 'Property has been registered with success!',
     })
   } catch (error) {
-    res.status(500).send(error);
+    res.status(500).send(error)
   }
 }
 
 const updateProperty = async (req, res) => {
   try {
-    const property = await PropertyModel.findByIdAndUpdate(req.params.id, req.body, {
-      new: true,
-      runValidators: true,
-    })
+    const property = await PropertyModel.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    )
     res.json(property)
   } catch (error) {
     res.status(500).send(error)
@@ -64,7 +68,7 @@ const deletePropertyById = async (req, res) => {
     })
     res.json({
       title: property.title,
-      message: 'The Property has been deleted successfully.'
+      message: 'The Property has been deleted successfully.',
     })
     res
   } catch (error) {
@@ -73,15 +77,23 @@ const deletePropertyById = async (req, res) => {
 }
 
 const getAllPromoHouses = async (req, res) => {
-    try {
-        const property = await PropertyModel.find({
-            "ispromo": true
-        })
-        res.json(property)
-    } catch (error) {
-        
-    }
-       
+  try {
+    const property = await PropertyModel.find({
+      'ispromo': true,
+    })
+    res.json(property)
+  } catch (error) {}
+}
+
+const getNewHouses = async (req, res) => {
+  // try {
+  //   let result = new Date()
+  //   result.setDate(result.getDate() - 30)
+  //   const property = await PropertyModel.find({
+  //     'createdAt'
+  //   })
+  //   res.json(property)
+  // } catch (error) {}
 }
 
 module.exports = {
@@ -89,5 +101,6 @@ module.exports = {
   updateProperty,
   getAllProperties,
   deletePropertyById,
-  getAllPromoHouses
+  getAllPromoHouses,
+  getNewHouses,
 }
