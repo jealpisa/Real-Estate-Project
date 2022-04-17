@@ -85,6 +85,17 @@ const getAllPromoHouses = async (req, res) => {
   } catch (error) {}
 }
 
+const getPropertyById = async (req, res) => {
+  try {
+    const property = await PropertyModel.find({
+      _id: req.params.id,
+    })
+    res.json(property)
+  } catch (error) {
+    res.status(500).send(error)
+  }
+}
+
 const getNewHouses = async (req, res) => {
   // try {
   //   let result = new Date()
@@ -103,4 +114,5 @@ module.exports = {
   deletePropertyById,
   getAllPromoHouses,
   getNewHouses,
+  getPropertyById
 }
