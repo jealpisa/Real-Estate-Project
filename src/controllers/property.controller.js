@@ -8,23 +8,19 @@ async function newProperty(req, res) {
     const property = await PropertyModel.create({
       title: req.body.title,
       price: req.body.price,
+      createdAt: req.body.createdAt,
+      photos: req.body.photos,
       category: req.body.category,
-      province: req.body.province,
-      municipality: req.body.municipality,
-      zone: req.body.zone,
+      municipality: req.body.municipality[0],
+      notes: req.body.privatenotes,
       address: req.body.address,
-      availableMeters: req.body.availableMeters,
-      groundmeters: req.body.groundMeters,
-      builtmeters: req.body.builtmeters,
       bathrooms: req.body.bathrooms,
       description: req.body.description,
-      privatenotes: req.body.privatenotes,
-      extras: req.body.extras,
-      floor: req.body.floor,
-      numberoffloors: req.body.numberoffloors,
-      photos: req.body.photos,
-      createdAt: req.body.createdAt,
-      petitions: req.body.petitions,
+      meters: req.body.meters,
+      owner: req.body.owner,
+      rooms: req.body.rooms,
+      ispromo: req.body.ispromo,
+      zone: req.body.zone
     })
 
     res.json({
@@ -32,6 +28,7 @@ async function newProperty(req, res) {
       message: 'Property has been registered with success!',
     })
   } catch (error) {
+    console.log(error)
     res.status(500).send(error)
   }
 }
@@ -78,12 +75,12 @@ const deletePropertyById = async (req, res) => {
 
 const getPropertyByMunicipality = async (req, res) => {
   try {
-    console.log(req)
     const property = await PropertyModel.find({
-      'municipality': req.body.municipality,
+      municipality: req.query.municipality,
     })
     res.json(property)
   } catch (error) {
+    console.log(error)
     res.status(500).send(error)
   }
 }

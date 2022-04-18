@@ -9,8 +9,8 @@ router.put('/:id', updateProperty)
 router.get('/', getAllProperties)
 router.get('/promo', getAllPromoHouses)
 router.get('/new', getNewHouses)
-router.get('/:id', getPropertyById)
 router.get('/municipality', getPropertyByMunicipality)
+router.get('/:id', getPropertyById)
 router.delete('/:id', deletePropertyById)
 
 module.exports = router
