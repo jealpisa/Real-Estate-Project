@@ -4,8 +4,10 @@ const {
   newProperty, updateProperty, getAllProperties, deletePropertyById, getAllPromoHouses, getNewHouses, getPropertyById, getPropertyByMunicipality
 } = require('../controllers/property.controller')
 
-router.post('/', newProperty)
-router.put('/:id', updateProperty)
+const { checkUser, checkAdmin } = require('../utils/index')
+
+router.post('/', checkUser, checkAdmin, newProperty)
+router.put('/:id', checkUser, checkAdmin, updateProperty)
 router.get('/', getAllProperties)
 router.get('/promo', getAllPromoHouses)
 router.get('/new', getNewHouses)

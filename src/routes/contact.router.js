@@ -8,10 +8,14 @@ const {
   getContactById
 } = require('../controllers/contact.controller')
 
-router.post('/', createContact)
-router.get('/', getAllContacts)
-router.put('/:id', updateContact)
-router.delete('/:id', deleteContactById)
-router.get('/:id', getContactById)
+const {
+  checkUser, checkAdmin
+} = require('../utils/index')
+
+router.post('/', checkUser, checkAdmin, createContact)
+router.get('/', checkUser, checkAdmin, getAllContacts)
+router.put('/:id', checkUser, checkAdmin, updateContact)
+router.delete('/:id', checkUser, checkAdmin, deleteContactById)
+router.get('/:id', checkUser, checkAdmin, getContactById)
 
 module.exports = router

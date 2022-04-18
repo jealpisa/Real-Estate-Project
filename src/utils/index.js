@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 const UserModel = require("../models/users.model");
 
-function authUser(req, res, next) {
+function checkUser(req, res, next) {
   if (!req.headers.token) {
     res.status(403).json({ error: "No Token found" });
   } else {
@@ -23,14 +23,14 @@ function authUser(req, res, next) {
   }
 }
 
-function authAdmin(req, res, next) {
+function checkAdmin(req, res, next) {
   if (res.locals.user.role === "admin") {
     return next();
   }
   return res.send("Unauthorized access");
 }
 
-function authRole(req, res, next) {
+function checkRole(req, res, next) {
   if (
     res.locals.user.role === "admin" ||
     res.locals.user.role === "agent" 
@@ -40,7 +40,7 @@ function authRole(req, res, next) {
   return res.send("Unauthorized access");
 }
 
-function authAgent(req, res, next) {
+function checkAgent(req, res, next) {
   if (res.locals.user.role === "admin" || res.locals.user.role === "agent") {
     return next();
   }
@@ -48,8 +48,8 @@ function authAgent(req, res, next) {
 }
 
 module.exports = {
-  authUser,
-  authAdmin,
-  authAgent,
-  authRole
+  checkUser,
+  checkAdmin,
+  checkAgent,
+  checkRole
 };

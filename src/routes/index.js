@@ -4,7 +4,6 @@ const genUserRouter = require('./users.router')
 const genPropertyRouter = require('./property.router')
 const genAuthRouter = require('./auth.router')
 const genPetitionRouter = require('./petition.router')
-const genAdminRouter = require('./admin.router')
 const TodoRouter = require('./todos.router')
 const genContactRouter = require('./contact.router')
 
@@ -13,7 +12,6 @@ router
   .use('/property', genPropertyRouter)
   .use('/auth', genAuthRouter)
   .use('/petition', genPetitionRouter)
-  .use('/admin', genAdminRouter)
   .use('/todo', TodoRouter)
   .use('/contact', genContactRouter)
 

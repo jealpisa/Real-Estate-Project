@@ -6,10 +6,12 @@ const {
   deleteTodo
 } = require('../controllers/todos.controller')
 
+const { checkUser, checkAdmin } = require('../utils/index')
+
 router
-  .get('/', listTodos)
-  .post('/', createTodo)
-  .put('/:id', updateTodo)
-  .delete ('/:id', deleteTodo)
+  .get('/', checkUser, checkAdmin, listTodos)
+  .post('/', checkUser, checkAdmin, createTodo)
+  .put('/:id', checkUser, checkAdmin, updateTodo)
+  .delete('/:id', checkUser, checkAdmin, deleteTodo)
 
 module.exports = router
