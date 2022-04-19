@@ -4,13 +4,13 @@ require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
-const morgan = require('morgan') 
+const morgan = require('morgan')
 
 ;(async function () {
   // MONGOOSE
   try {
     await mongoose.connect(process.env.MONGO_URL, {
-      dbName: process.env.MONGO_DB || 'realEstateDB'
+      dbName: process.env.MONGO_DB || 'realestateproject',
     })
     console.info('>'.repeat(40))
     console.info('✅  Database Connected with Success!')
@@ -23,7 +23,7 @@ const morgan = require('morgan')
     const app = express()
       .use(cors())
       .use(morgan('combined'))
-      .use(express.json()) 
+      .use(express.json())
       .use('/', apiRouter)
 
     // Starting the Server here
@@ -42,6 +42,5 @@ const morgan = require('morgan')
   }
 })()
 
-
-const apiRouter = require('./src/routes/index');
+const apiRouter = require('./src/routes/index')
 const res = require('express/lib/response')
